@@ -3,510 +3,470 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MYHFMTRADER | Irish All</title>
+<meta name="description" content="MYHFMTRADER — Irish All | Graphic Designer & Trading Enthusiast">
+<title>MYHFMTRADER — Irish All</title>
 
 <style>
 :root{
-  --bg:#050806;
-  --sidebar:#080d0a;
-  --panel:#0b120e;
-  --panel2:#0e1712;
-  --line:rgba(255,255,255,.08);
-  --text:#f2f7f3;
-  --muted:#7f8e84;
-  --green:#00f58b;
-  --green2:#08bd70;
+  --bg:#030604;
+  --panel:#08100c;
+  --panel2:#0c1510;
+  --green:#00ff88;
+  --green2:#00c96b;
   --gold:#d9b45b;
-  --red:#ff5062;
-  --blue:#4ba3ff;
-  --shadow:0 25px 70px rgba(0,0,0,.45);
+  --white:#f4f8f5;
+  --muted:#819088;
+  --red:#ff5264;
+  --line:rgba(255,255,255,.08);
+  --glow:0 0 35px rgba(0,255,136,.12);
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
 
+html{scroll-behavior:smooth}
+
 body{
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   background:
-    radial-gradient(circle at 80% 0%,rgba(0,245,139,.07),transparent 30%),
+    radial-gradient(circle at 80% 5%,rgba(0,255,136,.08),transparent 30%),
+    radial-gradient(circle at 10% 45%,rgba(217,180,91,.05),transparent 25%),
     var(--bg);
-  color:var(--text);
-  min-height:100vh;
+  color:var(--white);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
 }
 
-button,input,select{font:inherit}
-button{cursor:pointer}
 a{text-decoration:none;color:inherit}
 
-.hidden{display:none!important}
+button,input,textarea{font:inherit}
 
-/* LOGIN */
-
-#loginScreen{
-  min-height:100vh;
-  display:grid;
-  place-items:center;
-  padding:25px;
+.container{
+  width:min(1180px,92%);
+  margin:auto;
 }
 
-.login-box{
-  width:min(430px,100%);
-  padding:38px;
-  border:1px solid var(--line);
-  border-radius:24px;
-  background:linear-gradient(145deg,#0d1711,#070b08);
-  box-shadow:var(--shadow);
-}
+section{padding:105px 0}
 
-.brand{
-  font-weight:950;
-  letter-spacing:2px;
-  font-size:1.15rem;
-}
+/* NAV */
 
-.brand span{color:var(--green)}
-
-.login-title{
-  font-size:2.4rem;
-  line-height:1;
-  margin:35px 0 10px;
-  letter-spacing:-2px;
-}
-
-.login-sub{
-  color:var(--muted);
-  margin-bottom:25px;
-}
-
-.field{
-  margin-bottom:15px;
-}
-
-.field label{
-  display:block;
-  color:var(--muted);
-  font-size:.75rem;
-  margin-bottom:7px;
-}
-
-.field input,
-.field select{
-  width:100%;
-  background:#050906;
-  color:var(--text);
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:13px;
-  outline:none;
-}
-
-.field input:focus{
-  border-color:rgba(0,245,139,.5);
-}
-
-.primary{
-  width:100%;
-  border:0;
-  border-radius:10px;
-  padding:14px;
-  background:var(--green);
-  color:#031009;
-  font-weight:950;
-}
-
-.demo-label{
-  text-align:center;
-  color:var(--gold);
-  font-size:.7rem;
-  margin-top:15px;
-  letter-spacing:1px;
-}
-
-/* APP */
-
-.app{
-  display:grid;
-  grid-template-columns:245px 1fr;
-  min-height:100vh;
-}
-
-.sidebar{
+nav{
   position:fixed;
-  width:245px;
-  height:100vh;
-  background:rgba(7,12,9,.94);
-  border-right:1px solid var(--line);
-  padding:24px 15px;
-  z-index:10;
-}
-
-.sidebar-brand{
-  padding:0 12px 30px;
-}
-
-.profile-mini{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  padding:13px;
-  background:rgba(255,255,255,.025);
-  border:1px solid var(--line);
-  border-radius:13px;
-  margin-bottom:24px;
-}
-
-.avatar{
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(135deg,var(--green),#116b49);
-  color:#031009;
-  font-weight:950;
-}
-
-.profile-mini small{
-  color:var(--muted);
-  display:block;
-  font-size:.68rem;
-}
-
-.nav-title{
-  color:#4f5d54;
-  font-size:.65rem;
-  font-weight:900;
-  letter-spacing:1.5px;
-  padding:0 12px 8px;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(3,6,4,.78);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
 }
 
 .nav{
-  display:grid;
-  gap:4px;
-}
-
-.nav button{
-  border:0;
-  background:transparent;
-  color:#9aa79e;
-  text-align:left;
-  padding:12px;
-  border-radius:9px;
-}
-
-.nav button:hover,
-.nav button.active{
-  color:var(--green);
-  background:rgba(0,245,139,.07);
-}
-
-.logout{
-  position:absolute;
-  bottom:22px;
-  left:15px;
-  width:215px;
-  color:#ff7582!important;
-}
-
-/* MAIN */
-
-.main{
-  grid-column:2;
-  padding:25px 30px 60px;
-  min-width:0;
-}
-
-.topbar{
+  height:72px;
   display:flex;
+  align-items:center;
   justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  margin-bottom:28px;
 }
 
-.page-title h1{
-  font-size:1.7rem;
-  letter-spacing:-1px;
+.logo{
+  font-size:1.05rem;
+  font-weight:950;
+  letter-spacing:1.5px;
 }
 
-.page-title p{
-  color:var(--muted);
-  font-size:.78rem;
-  margin-top:3px;
-}
+.logo span{color:var(--green)}
 
-.market-status{
+.navlinks{
   display:flex;
-  align-items:center;
-  gap:7px;
-  color:var(--green);
-  font-size:.7rem;
-  font-weight:800;
+  gap:25px;
+  list-style:none;
+  color:var(--muted);
+  font-size:.85rem;
 }
 
-.market-dot{
+.navlinks a:hover{color:var(--green)}
+
+.nav-cta{
+  border:1px solid rgba(0,255,136,.3);
+  color:var(--green);
+  padding:8px 13px;
+  border-radius:8px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:grid;
+  align-items:center;
+  padding-top:120px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--green);
+  background:rgba(0,255,136,.05);
+  border:1px solid rgba(0,255,136,.2);
+  padding:7px 12px;
+  border-radius:100px;
+  font-size:.7rem;
+  font-weight:900;
+  letter-spacing:1px;
+  margin-bottom:22px;
+}
+
+.live-dot{
   width:7px;
   height:7px;
   border-radius:50%;
   background:var(--green);
-  box-shadow:0 0 12px var(--green);
+  box-shadow:0 0 14px var(--green);
+  animation:pulse 1.3s infinite;
 }
 
-/* PANELS */
-
-.panel{
-  background:linear-gradient(145deg,rgba(13,22,16,.96),rgba(7,11,9,.96));
-  border:1px solid var(--line);
-  border-radius:17px;
-  box-shadow:var(--shadow);
+@keyframes pulse{
+  50%{opacity:.3}
 }
 
-.panel-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:17px 19px;
-  border-bottom:1px solid var(--line);
-}
-
-.panel-head h3{
-  font-size:.88rem;
-}
-
-.muted{
-  color:var(--muted);
-}
-
-/* DASHBOARD */
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin-bottom:15px;
-}
-
-.stat{
-  padding:18px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.018);
-  border-radius:13px;
-}
-
-.stat-label{
-  color:var(--muted);
-  font-size:.67rem;
-  margin-bottom:6px;
-}
-
-.stat-value{
-  font-size:1.4rem;
-  font-weight:900;
+h1{
+  font-size:clamp(3.4rem,7vw,7rem);
+  line-height:.87;
+  letter-spacing:-6px;
+  font-weight:950;
 }
 
 .green{color:var(--green)}
-.red{color:var(--red)}
-.gold{color:var(--gold)}
 
-.terminal-grid{
-  display:grid;
-  grid-template-columns:1fr 290px;
-  gap:15px;
+.hero-text{
+  max-width:560px;
+  color:var(--muted);
+  font-size:1.05rem;
+  margin-top:25px;
 }
 
-.chart-panel{
-  overflow:hidden;
-}
-
-.chart-tools{
+.buttons{
   display:flex;
-  gap:7px;
+  gap:12px;
+  margin-top:30px;
   flex-wrap:wrap;
 }
 
-.chart-tools button{
-  background:#111a14;
+.btn{
   border:1px solid var(--line);
-  color:var(--muted);
-  padding:6px 9px;
-  border-radius:6px;
-  font-size:.68rem;
+  border-radius:10px;
+  padding:13px 18px;
+  font-size:.85rem;
+  font-weight:850;
+  cursor:pointer;
+  transition:.25s;
 }
 
-.chart-tools button.active{
-  background:rgba(0,245,139,.1);
-  color:var(--green);
-  border-color:rgba(0,245,139,.25);
-}
+.btn:hover{transform:translateY(-2px)}
 
-.chart-wrap{
-  height:420px;
-  position:relative;
-  padding:15px;
-}
-
-#candleCanvas{
-  width:100%;
-  height:100%;
-  display:block;
-}
-
-.price-label{
-  position:absolute;
-  right:8px;
-  top:48%;
+.primary{
   background:var(--green);
   color:#021008;
-  padding:4px 7px;
+  border-color:var(--green);
+}
+
+.secondary{
+  background:rgba(255,255,255,.025);
+}
+
+/* TERMINAL */
+
+.terminal{
+  background:linear-gradient(145deg,#0b140f,#050906);
+  border:1px solid rgba(0,255,136,.15);
+  border-radius:22px;
+  padding:17px;
+  box-shadow:var(--glow);
+  overflow:hidden;
+}
+
+.terminal-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.symbol{
+  font-weight:900;
+}
+
+.symbol small{
+  display:block;
+  color:var(--muted);
+  font-size:.65rem;
+  font-weight:500;
+}
+
+.status{
+  color:var(--green);
+  background:rgba(0,255,136,.07);
+  padding:5px 9px;
+  border-radius:6px;
+  font-size:.65rem;
+  font-weight:900;
+}
+
+.chart{
+  position:relative;
+  height:290px;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),
+    #07100b;
+  background-size:42px 42px;
+}
+
+.chart svg{
+  width:100%;
+  height:100%;
+}
+
+.price-line{
+  fill:none;
+  stroke:var(--green);
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  filter:drop-shadow(0 0 6px rgba(0,255,136,.5));
+}
+
+.chart-label{
+  position:absolute;
+  right:8px;
+  top:22%;
+  color:#06120b;
+  background:var(--green);
+  padding:3px 6px;
   border-radius:4px;
   font-size:.65rem;
   font-weight:900;
 }
 
-/* ORDER PANEL */
-
-.order-panel{
-  padding:18px;
-}
-
-.market-select{
-  width:100%;
-  padding:11px;
-  border-radius:8px;
-  background:#050906;
-  border:1px solid var(--line);
-  color:white;
-  margin:12px 0;
-}
-
-.price-box{
-  padding:17px;
-  background:#060b08;
-  border:1px solid var(--line);
-  border-radius:10px;
-  margin-bottom:14px;
-}
-
-.price{
-  font-size:1.8rem;
-  font-weight:950;
-}
-
-.order-row{
+.terminal-bottom{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(3,1fr);
   gap:8px;
   margin-top:10px;
 }
 
-.buy,.sell{
-  padding:12px;
-  border:0;
-  border-radius:8px;
-  font-weight:900;
-}
-
-.buy{
-  background:var(--green);
-  color:#031009;
-}
-
-.sell{
-  background:var(--red);
-  color:white;
-}
-
-.demo-warning{
-  margin-top:14px;
-  padding:10px;
-  background:rgba(217,180,91,.06);
-  border:1px solid rgba(217,180,91,.15);
-  color:#aa965e;
-  border-radius:8px;
-  font-size:.65rem;
-}
-
-/* TABLE */
-
-.table-panel{
-  margin-top:15px;
-  overflow:auto;
-}
-
-table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:650px;
-}
-
-th,td{
-  text-align:left;
-  padding:13px 17px;
-  border-bottom:1px solid var(--line);
-  font-size:.75rem;
-}
-
-th{
-  color:var(--muted);
-  font-size:.65rem;
-  font-weight:800;
-}
-
-/* PAGES */
-
-.page{
-  display:none;
-}
-
-.page.active{
-  display:block;
-}
-
-.section-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-.action-card{
-  padding:25px;
-}
-
-.big-number{
-  font-size:2.7rem;
-  font-weight:950;
-  margin:8px 0 20px;
-}
-
-.action-card input{
-  width:100%;
-  background:#050906;
+.tstat{
+  background:rgba(255,255,255,.025);
   border:1px solid var(--line);
-  color:white;
-  border-radius:9px;
-  padding:13px;
+  border-radius:8px;
+  padding:10px;
+}
+
+.tstat small{
+  color:var(--muted);
+  display:block;
+  font-size:.62rem;
+}
+
+.tstat strong{
+  font-size:.85rem;
+}
+
+/* SECTION HEAD */
+
+.section-label{
+  color:var(--green);
+  font-size:.7rem;
+  font-weight:950;
+  letter-spacing:2px;
+  text-transform:uppercase;
   margin-bottom:10px;
 }
 
-.action-button{
-  width:100%;
+h2{
+  font-size:clamp(2.3rem,5vw,4.2rem);
+  line-height:1;
+  letter-spacing:-3px;
+}
+
+.section-desc{
+  color:var(--muted);
+  margin-top:14px;
+  max-width:650px;
+}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:65px;
+  align-items:center;
+}
+
+.profile-card{
+  aspect-ratio:1;
+  border-radius:25px;
+  border:1px solid rgba(0,255,136,.16);
+  background:
+    radial-gradient(circle at 50% 35%,rgba(0,255,136,.2),transparent 23%),
+    linear-gradient(145deg,#101a14,#060907);
+  display:grid;
+  place-items:center;
+  box-shadow:var(--glow);
+}
+
+.profile-initial{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  border:2px solid var(--green);
+  color:var(--green);
+  font-size:3rem;
+  font-weight:950;
+  box-shadow:0 0 45px rgba(0,255,136,.16);
+}
+
+.about-text p{
+  color:var(--muted);
+  margin:18px 0;
+}
+
+/* DASHBOARD */
+
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  gap:18px;
+  margin-top:40px;
+}
+
+.card{
+  background:linear-gradient(145deg,rgba(13,21,16,.96),rgba(6,10,8,.96));
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:23px;
+  box-shadow:var(--glow);
+}
+
+.card-label{
+  color:var(--muted);
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.balance{
+  font-size:3rem;
+  line-height:1.1;
+  font-weight:950;
+  margin:8px 0;
+}
+
+.positive{color:var(--green)}
+.negative{color:var(--red)}
+
+.account-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  margin-top:22px;
+}
+
+.metric{
   padding:13px;
-  border:0;
+  border:1px solid var(--line);
   border-radius:9px;
-  background:var(--green);
-  color:#031009;
+  background:rgba(255,255,255,.02);
+}
+
+.metric small{
+  display:block;
+  color:var(--muted);
+  font-size:.62rem;
+}
+
+.metric strong{font-size:.9rem}
+
+.demo{
+  margin-top:17px;
+  color:var(--gold);
+  font-size:.67rem;
+  line-height:1.5;
+}
+
+.market-list{
+  margin-top:14px;
+}
+
+.market-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.market-row:last-child{border-bottom:0}
+
+.market-name{
+  font-weight:850;
+  font-size:.85rem;
+}
+
+.market-price{
+  color:var(--muted);
+  font-size:.75rem;
+}
+
+.market-change{
+  font-size:.75rem;
   font-weight:900;
 }
 
-.withdraw-button{
-  background:var(--red);
-  color:white;
+/* SKILLS */
+
+.skills{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:40px;
 }
 
-.note{
+.skill{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.018);
+  border-radius:16px;
+  padding:24px;
+  transition:.25s;
+}
+
+.skill:hover{
+  transform:translateY(-5px);
+  border-color:rgba(0,255,136,.25);
+}
+
+.icon{
+  font-size:1.7rem;
+  margin-bottom:12px;
+}
+
+.skill p{
   color:var(--muted);
-  font-size:.7rem;
-  line-height:1.6;
-  margin-top:15px;
+  font-size:.82rem;
+  margin-top:7px;
 }
 
 /* PORTFOLIO */
@@ -515,218 +475,284 @@ th{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:15px;
+  margin-top:40px;
 }
 
-.work{
-  min-height:290px;
-  border-radius:17px;
-  border:1px solid var(--line);
+.project{
+  min-height:330px;
   padding:22px;
+  border:1px solid var(--line);
+  border-radius:18px;
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
   position:relative;
   overflow:hidden;
   background:
-    radial-gradient(circle at 70% 20%,rgba(0,245,139,.35),transparent 20%),
-    linear-gradient(145deg,#18251d,#080c09);
+    radial-gradient(circle at 70% 25%,rgba(0,255,136,.25),transparent 23%),
+    linear-gradient(145deg,#17231b,#070b09);
+  transition:.3s;
 }
 
-.work:nth-child(2){
+.project:nth-child(2){
   background:
-    radial-gradient(circle at 20% 20%,rgba(217,180,91,.3),transparent 20%),
-    linear-gradient(145deg,#211d14,#090b08);
+    radial-gradient(circle at 25% 25%,rgba(217,180,91,.28),transparent 23%),
+    linear-gradient(145deg,#211d13,#080a08);
 }
 
-.work:nth-child(3){
+.project:nth-child(3){
   background:
-    radial-gradient(circle at 70% 70%,rgba(75,163,255,.3),transparent 20%),
-    linear-gradient(145deg,#101b28,#080b0d);
+    radial-gradient(circle at 70% 70%,rgba(60,130,255,.2),transparent 25%),
+    linear-gradient(145deg,#111b27,#070a0d);
 }
 
-.work-number{
+.project:hover{
+  transform:translateY(-7px);
+  box-shadow:var(--glow);
+}
+
+.number{
   position:absolute;
   top:17px;
   right:17px;
   color:rgba(255,255,255,.25);
-  font-weight:900;
-}
-
-.work h3{font-size:1.35rem}
-.work p{color:#98a59c;font-size:.75rem}
-
-/* PROFILE */
-
-.profile-card{
-  max-width:800px;
-  padding:30px;
-}
-
-.profile-big{
-  display:flex;
-  align-items:center;
-  gap:18px;
-  margin-bottom:25px;
-}
-
-.avatar-big{
-  width:75px;
-  height:75px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(135deg,var(--green),#116b49);
-  color:#031009;
-  font-size:1.8rem;
   font-weight:950;
 }
 
-.profile-big h2{
-  font-size:1.7rem;
+.project h3{font-size:1.4rem}
+
+.project p{
+  color:#a5b0a9;
+  font-size:.78rem;
 }
 
-.profile-big p{
+/* JOURNAL */
+
+.journal{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:40px;
+}
+
+.entry{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:22px;
+  background:rgba(255,255,255,.018);
+}
+
+.entry-date{
+  color:var(--green);
+  font-size:.68rem;
+  font-weight:900;
+}
+
+.entry h3{
+  margin:8px 0;
+}
+
+.entry p{
   color:var(--muted);
   font-size:.8rem;
 }
 
-.bio{
-  color:#9ba89f;
-  line-height:1.8;
+/* CONTACT */
+
+.contact{
+  text-align:center;
 }
 
-/* TOAST */
-
-.toast{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  background:#101a14;
-  border:1px solid rgba(0,245,139,.25);
-  color:white;
-  padding:14px 17px;
-  border-radius:10px;
-  box-shadow:var(--shadow);
-  transform:translateY(100px);
-  opacity:0;
-  transition:.3s;
-  z-index:100;
-  font-size:.75rem;
+.contact-box{
+  max-width:780px;
+  margin:40px auto 0;
+  padding:60px 25px;
+  border:1px solid rgba(0,255,136,.15);
+  border-radius:25px;
+  background:
+    radial-gradient(circle at center,rgba(0,255,136,.06),transparent 55%);
 }
 
-.toast.show{
-  transform:translateY(0);
-  opacity:1;
+.contact-box p{
+  color:var(--muted);
+  max-width:500px;
+  margin:15px auto 25px;
 }
 
-/* RESPONSIVE */
+.contact-links{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
 
-@media(max-width:950px){
-  .app{grid-template-columns:1fr}
+/* FOOTER */
 
-  .sidebar{
-    position:fixed;
-    width:100%;
-    height:auto;
-    bottom:0;
-    top:auto;
-    border-right:0;
-    border-top:1px solid var(--line);
-    padding:8px;
-  }
+footer{
+  border-top:1px solid var(--line);
+  padding:25px 0;
+  color:var(--muted);
+  text-align:center;
+  font-size:.7rem;
+}
 
-  .sidebar-brand,
-  .profile-mini,
-  .nav-title,
-  .logout{
-    display:none;
-  }
+/* MOBILE */
 
-  .nav{
-    display:flex;
-    justify-content:space-around;
-  }
+@media(max-width:850px){
 
-  .nav button{
-    font-size:.65rem;
-    text-align:center;
-    padding:10px 7px;
-  }
+  .navlinks{display:none}
 
-  .main{
-    grid-column:1;
-    padding:20px 15px 100px;
-  }
-
-  .terminal-grid{
+  .hero-grid,
+  .about-grid,
+  .dashboard-grid{
     grid-template-columns:1fr;
   }
 
-  .stats{
+  .hero-grid{gap:40px}
+
+  .skills,
+  .portfolio,
+  .journal{
     grid-template-columns:1fr 1fr;
   }
 
-  .portfolio{
-    grid-template-columns:1fr 1fr;
-  }
 }
 
-@media(max-width:600px){
-  .stats,
-  .section-grid,
-  .portfolio{
+@media(max-width:580px){
+
+  section{padding:75px 0}
+
+  h1{letter-spacing:-3px}
+
+  .skills,
+  .portfolio,
+  .journal,
+  .account-grid{
     grid-template-columns:1fr;
   }
 
-  .chart-wrap{
-    height:300px;
+  .terminal-bottom{
+    grid-template-columns:1fr;
   }
 
-  .topbar{
-    align-items:flex-start;
-  }
+  .balance{font-size:2.4rem}
 
-  .market-status{
-    display:none;
-  }
+  .chart{height:230px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= LOGIN ================= -->
+<!-- NAVIGATION -->
+<nav>
+  <div class="container nav">
 
-<section id="loginScreen">
-
-  <div class="login-box">
-
-    <div class="brand">
+    <a href="#home" class="logo">
       MY<span>HFM</span>TRADER
+    </a>
+
+    <ul class="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#trading">Trading</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#journal">Journal</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="badge">
+        <span class="live-dot"></span>
+        GRAPHIC DESIGNER × TRADER
+      </div>
+
+      <h1>
+        MY<span class="green">HFM</span>TRADER
+      </h1>
+
+      <p class="hero-text">
+        I'm Irish All — a graphic designer and trading enthusiast
+        combining visual creativity, technology and market analysis
+        into one personal brand.
+      </p>
+
+      <div class="buttons">
+        <a href="#portfolio" class="btn primary">
+          🎨 Explore My Work
+        </a>
+
+        <a href="#trading" class="btn secondary">
+          📈 Enter Trading Lab
+        </a>
+      </div>
+
     </div>
 
-    <h1 class="login-title">Welcome back.</h1>
 
-    <p class="login-sub">
-      Enter the demo terminal and explore your trading dashboard.
-    </p>
+    <!-- TRADING TERMINAL -->
+    <div class="terminal">
 
-    <div class="field">
-      <label>USERNAME</label>
-      <input id="loginUser" value="IrishAll" placeholder="Username">
-    </div>
+      <div class="terminal-header">
 
-    <div class="field">
-      <label>PASSWORD</label>
-      <input id="loginPass" type="password" value="demo123" placeholder="Password">
-    </div>
+        <div class="symbol">
+          EUR / USD
+          <small>SIMULATED MARKET</small>
+        </div>
 
-    <button class="primary" onclick="login()">
-      ENTER DEMO TERMINAL →
-    </button>
+        <div class="status">
+          ● DEMO LIVE
+        </div>
 
-    <div class="demo-label">
-      DEMO ENVIRONMENT · NO REAL MONEY
+      </div>
+
+      <div class="chart">
+
+        <div class="chart-label" id="chartPrice">
+          1.0842
+        </div>
+
+        <svg viewBox="0 0 700 300" preserveAspectRatio="none">
+
+          <polyline
+            id="mainChart"
+            class="price-line"
+            points="0,230 35,210 70,225 105,170 140,190 175,150 210,170 245,120 280,140 315,100 350,120 385,82 420,108 455,70 490,90 525,55 560,75 595,42 630,62 665,35 700,50"
+          />
+
+        </svg>
+
+      </div>
+
+      <div class="terminal-bottom">
+
+        <div class="tstat">
+          <small>PRICE</small>
+          <strong id="heroPrice">1.0842</strong>
+        </div>
+
+        <div class="tstat">
+          <small>CHANGE</small>
+          <strong class="positive" id="heroChange">+1.28%</strong>
+        </div>
+
+        <div class="tstat">
+          <small>MODE</small>
+          <strong class="positive">DEMO</strong>
+        </div>
+
+      </div>
+
     </div>
 
   </div>
@@ -734,913 +760,534 @@ th{
 </section>
 
 
-<!-- ================= APPLICATION ================= -->
+<!-- ABOUT -->
+<section id="about">
 
-<div id="app" class="app hidden">
+  <div class="container about-grid">
 
-  <!-- SIDEBAR -->
-
-  <aside class="sidebar">
-
-    <div class="sidebar-brand">
-      <div class="brand">
-        MY<span>HFM</span>TRADER
-      </div>
+    <div class="profile-card">
+      <div class="profile-initial">IA</div>
     </div>
 
-    <div class="profile-mini">
-      <div class="avatar">IA</div>
-      <div>
-        <strong>Irish All</strong>
-        <small>Demo Trader</small>
-      </div>
-    </div>
+    <div class="about-text">
 
-    <div class="nav-title">WORKSPACE</div>
+      <div class="section-label">About Irish</div>
 
-    <div class="nav">
+      <h2>Creative mind. Analytical mindset.</h2>
 
-      <button class="active" onclick="showPage('dashboard',this)">
-        📊 Dashboard
-      </button>
+      <p>
+        Welcome to MYHFMTRADER. I'm Irish All, a graphic designer
+        interested in the intersection between creativity, technology
+        and financial markets.
+      </p>
 
-      <button onclick="showPage('deposit',this)">
-        ↓ Deposit
-      </button>
+      <p>
+        Through design, I create visual identities, digital artwork
+        and concepts that communicate clearly. Through trading,
+        I study charts, market structure and disciplined decision-making.
+      </p>
 
-      <button onclick="showPage('withdraw',this)">
-        ↑ Withdraw
-      </button>
+      <p>
+        This website is my digital space to showcase both sides of
+        my work and document the journey.
+      </p>
 
-      <button onclick="showPage('portfolio',this)">
-        🎨 Portfolio
-      </button>
-
-      <button onclick="showPage('profile',this)">
-        👤 Profile
-      </button>
+      <a href="#contact" class="btn primary">
+        Work With Me →
+      </a>
 
     </div>
 
-    <button class="nav logout" onclick="logout()">
-      ⎋ Logout
-    </button>
+  </div>
 
-  </aside>
+</section>
 
 
-  <!-- MAIN -->
+<!-- TRADING -->
+<section id="trading">
 
-  <main class="main">
+  <div class="container">
 
-    <div class="topbar">
+    <div class="section-label">Trading Lab</div>
 
-      <div class="page-title">
-        <h1 id="pageHeading">Trading Dashboard</h1>
-        <p>MYHFMTRADER · KES Demo Account</p>
+    <h2>Market simulation.</h2>
+
+    <p class="section-desc">
+      A visual demonstration of the MYHFMTRADER trading environment.
+      Prices and performance shown here are simulated and are not live
+      financial-market data.
+    </p>
+
+
+    <div class="dashboard-grid">
+
+      <div class="card">
+
+        <div class="card-label">
+          DEMO ACCOUNT BALANCE
+        </div>
+
+        <div class="balance">
+          KES 100,000.00
+        </div>
+
+        <div class="positive">
+          +KES 2,840.00 DEMO P/L
+        </div>
+
+        <div class="account-grid">
+
+          <div class="metric">
+            <small>EQUITY</small>
+            <strong>KES 102,840</strong>
+          </div>
+
+          <div class="metric">
+            <small>OPEN P/L</small>
+            <strong class="positive">+2.84%</strong>
+          </div>
+
+          <div class="metric">
+            <small>ACCOUNT</small>
+            <strong>DEMO</strong>
+          </div>
+
+        </div>
+
+        <div class="demo">
+          DEMO MODE — No real deposits, withdrawals or trades are
+          processed by this portfolio website.
+        </div>
+
       </div>
 
-      <div class="market-status">
-        <span class="market-dot"></span>
-        SIMULATION RUNNING
-      </div>
 
-    </div>
+      <div class="card">
 
-
-    <!-- ================= DASHBOARD ================= -->
-
-    <section id="dashboard" class="page active">
-
-      <div class="stats">
-
-        <div class="stat">
-          <div class="stat-label">ACCOUNT BALANCE</div>
-          <div class="stat-value" id="balance">KES 100,000.00</div>
+        <div class="card-label">
+          WATCHLIST
         </div>
 
-        <div class="stat">
-          <div class="stat-label">EQUITY</div>
-          <div class="stat-value" id="equity">KES 100,000.00</div>
-        </div>
+        <div class="market-list">
 
-        <div class="stat">
-          <div class="stat-label">DEMO P/L</div>
-          <div class="stat-value green" id="pl">KES +0.00</div>
-        </div>
-
-        <div class="stat">
-          <div class="stat-label">MARGIN</div>
-          <div class="stat-value">KES 100,000</div>
-        </div>
-
-      </div>
-
-
-      <div class="terminal-grid">
-
-        <!-- CHART -->
-
-        <div class="panel chart-panel">
-
-          <div class="panel-head">
-
+          <div class="market-row">
             <div>
-              <strong id="symbolTitle">EUR/USD</strong>
-              <div class="muted" style="font-size:.65rem">
-                Simulated market
-              </div>
+              <div class="market-name">EUR/USD</div>
+              <div class="market-price" id="eur">1.0842</div>
             </div>
-
-            <div class="chart-tools">
-              <button class="active">1M</button>
-              <button>5M</button>
-              <button>15M</button>
-              <button>1H</button>
-            </div>
-
+            <div class="market-change positive">+1.28%</div>
           </div>
 
-          <div class="chart-wrap">
-
-            <canvas id="candleCanvas"></canvas>
-
-            <div class="price-label" id="priceLabel">
-              1.0842
+          <div class="market-row">
+            <div>
+              <div class="market-name">GBP/USD</div>
+              <div class="market-price" id="gbp">1.2741</div>
             </div>
-
+            <div class="market-change positive">+0.74%</div>
           </div>
 
-        </div>
-
-
-        <!-- ORDER PANEL -->
-
-        <div class="panel order-panel">
-
-          <strong>MARKET WATCH</strong>
-
-          <select class="market-select" id="marketSelect"
-                  onchange="changeMarket()">
-
-            <option value="EUR/USD">EUR/USD</option>
-            <option value="GBP/USD">GBP/USD</option>
-            <option value="USD/JPY">USD/JPY</option>
-            <option value="XAU/USD">XAU/USD</option>
-            <option value="BTC/USD">BTC/USD</option>
-
-          </select>
-
-          <div class="price-box">
-
-            <div class="muted" style="font-size:.65rem">
-              CURRENT SIMULATED PRICE
+          <div class="market-row">
+            <div>
+              <div class="market-name">XAU/USD</div>
+              <div class="market-price" id="gold">2352.60</div>
             </div>
-
-            <div class="price" id="orderPrice">
-              1.0842
-            </div>
-
-            <div class="green" id="marketChange">
-              +0.00%
-            </div>
-
+            <div class="market-change positive">+0.91%</div>
           </div>
 
-          <div class="muted" style="font-size:.65rem">
-            DEMO ORDER SIZE
-          </div>
-
-          <input
-            id="tradeAmount"
-            type="number"
-            value="10000"
-            style="width:100%;margin-top:7px;padding:11px;background:#050906;border:1px solid var(--line);color:white;border-radius:8px"
-          >
-
-          <div class="order-row">
-
-            <button class="buy" onclick="placeTrade('BUY')">
-              BUY
-            </button>
-
-            <button class="sell" onclick="placeTrade('SELL')">
-              SELL
-            </button>
-
-          </div>
-
-          <div class="demo-warning">
-            ⚠ DEMO MODE: Orders use simulated prices and do not
-            execute on a real market.
+          <div class="market-row">
+            <div>
+              <div class="market-name">USD/KES</div>
+              <div class="market-price">SIMULATION</div>
+            </div>
+            <div class="market-change">KES</div>
           </div>
 
         </div>
 
       </div>
 
+    </div>
 
-      <!-- POSITIONS -->
+  </div>
 
-      <div class="panel table-panel">
+</section>
 
-        <div class="panel-head">
-          <h3>Open Positions</h3>
-          <span class="muted" style="font-size:.65rem">
-            Simulation
-          </span>
-        </div>
 
-        <table>
+<!-- SKILLS -->
+<section id="skills">
 
-          <thead>
-            <tr>
-              <th>SYMBOL</th>
-              <th>SIDE</th>
-              <th>SIZE</th>
-              <th>ENTRY</th>
-              <th>CURRENT</th>
-              <th>P/L</th>
-            </tr>
-          </thead>
+  <div class="container">
 
-          <tbody id="positionsBody">
+    <div class="section-label">Skills</div>
 
-            <tr>
-              <td colspan="6" class="muted">
-                No open demo positions.
-              </td>
-            </tr>
+    <h2>What I bring.</h2>
 
-          </tbody>
+    <div class="skills">
 
-        </table>
-
-      </div>
-
-
-      <!-- HISTORY -->
-
-      <div class="panel table-panel">
-
-        <div class="panel-head">
-          <h3>Trade History</h3>
-        </div>
-
-        <table>
-
-          <thead>
-            <tr>
-              <th>TIME</th>
-              <th>SYMBOL</th>
-              <th>SIDE</th>
-              <th>SIZE</th>
-              <th>RESULT</th>
-            </tr>
-          </thead>
-
-          <tbody id="historyBody">
-
-            <tr>
-              <td colspan="5" class="muted">
-                No demo trades yet.
-              </td>
-            </tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= DEPOSIT ================= -->
-
-    <section id="deposit" class="page">
-
-      <div class="section-grid">
-
-        <div class="panel action-card">
-
-          <div class="muted">CURRENT DEMO BALANCE</div>
-
-          <div class="big-number" id="depositBalance">
-            KES 100,000.00
-          </div>
-
-          <input
-            id="depositInput"
-            type="number"
-            placeholder="Amount in KES"
-            min="1"
-          >
-
-          <button class="action-button" onclick="deposit()">
-            ↓ ADD DEMO FUNDS
-          </button>
-
-          <p class="note">
-            This simulates a deposit for the website demonstration.
-            No payment gateway or real financial transaction is connected.
-          </p>
-
-        </div>
-
-
-        <div class="panel action-card">
-
-          <h3>Deposit Preview</h3>
-
-          <p class="note">
-            Enter an amount in Kenyan shillings and the simulated
-            account balance will update instantly.
-          </p>
-
-          <div style="margin-top:25px;color:var(--green);font-size:2rem">
-            KES
-          </div>
-
-          <div class="muted">
-            Kenyan Shilling Account
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= WITHDRAW ================= -->
-
-    <section id="withdraw" class="page">
-
-      <div class="section-grid">
-
-        <div class="panel action-card">
-
-          <div class="muted">AVAILABLE DEMO BALANCE</div>
-
-          <div class="big-number" id="withdrawBalance">
-            KES 100,000.00
-          </div>
-
-          <input
-            id="withdrawInput"
-            type="number"
-            placeholder="Amount in KES"
-            min="1"
-          >
-
-          <button
-            class="action-button withdraw-button"
-            onclick="withdraw()"
-          >
-            ↑ REQUEST DEMO WITHDRAWAL
-          </button>
-
-          <p class="note">
-            This is only a user-interface simulation. It does not
-            send funds to a bank, wallet, M-Pesa account or payment service.
-          </p>
-
-        </div>
-
-
-        <div class="panel action-card">
-
-          <h3>Withdrawal Status</h3>
-
-          <p class="note" id="withdrawStatus">
-            No withdrawal request has been made.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= PORTFOLIO ================= -->
-
-    <section id="portfolio" class="page">
-
-      <div class="section-grid" style="margin-bottom:20px">
-
-        <div>
-          <div class="muted" style="font-size:.7rem">
-            GRAPHIC DESIGNER
-          </div>
-
-          <h2 style="font-size:2.7rem;margin-top:5px">
-            Visual work by Irish.
-          </h2>
-        </div>
-
-        <p class="muted">
-          Replace the sample projects below with your actual
-          logos, posters, branding projects, social media designs
-          and other creative work.
+      <div class="skill">
+        <div class="icon">🎨</div>
+        <h3>Graphic Design</h3>
+        <p>
+          Digital graphics, posters, social content and visual concepts.
         </p>
-
       </div>
 
-
-      <div class="portfolio">
-
-        <article class="work">
-          <span class="work-number">01</span>
-          <h3>Brand Identity</h3>
-          <p>Logo · Typography · Art Direction</p>
-        </article>
-
-        <article class="work">
-          <span class="work-number">02</span>
-          <h3>Social Campaign</h3>
-          <p>Digital graphics · Campaign design</p>
-        </article>
-
-        <article class="work">
-          <span class="work-number">03</span>
-          <h3>Trading Brand</h3>
-          <p>UI · Dashboard · Visual identity</p>
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= PROFILE ================= -->
-
-    <section id="profile" class="page">
-
-      <div class="panel profile-card">
-
-        <div class="profile-big">
-
-          <div class="avatar-big">IA</div>
-
-          <div>
-            <h2>Irish All</h2>
-            <p>Graphic Designer · Trading Enthusiast</p>
-          </div>
-
-        </div>
-
-        <p class="bio">
-          Welcome to MYHFMTRADER. This personal brand combines
-          graphic design, digital creativity and a passion for
-          studying financial markets.
-          <br><br>
-          The terminal on this website is a visual simulation
-          created for demonstration purposes. It is designed to
-          show how a modern trading interface could look and feel
-          without connecting to a real brokerage account.
+      <div class="skill">
+        <div class="icon">✦</div>
+        <h3>Brand Identity</h3>
+        <p>
+          Logos, typography, color systems and consistent brand direction.
         </p>
+      </div>
 
-        <div class="stats" style="margin-top:25px">
+      <div class="skill">
+        <div class="icon">📊</div>
+        <h3>Market Analysis</h3>
+        <p>
+          Chart study, market structure and technical-analysis learning.
+        </p>
+      </div>
 
-          <div class="stat">
-            <div class="stat-label">SPECIALTY</div>
-            <div class="stat-value" style="font-size:1rem">
-              Graphic Design
-            </div>
-          </div>
+      <div class="skill">
+        <div class="icon">🧠</div>
+        <h3>Strategy</h3>
+        <p>
+          Structured thinking applied to both creative and analytical work.
+        </p>
+      </div>
 
-          <div class="stat">
-            <div class="stat-label">MARKET MODE</div>
-            <div class="stat-value green" style="font-size:1rem">
-              DEMO
-            </div>
-          </div>
+      <div class="skill">
+        <div class="icon">⚡</div>
+        <h3>Creative Direction</h3>
+        <p>
+          Turning ideas into visual concepts with personality and purpose.
+        </p>
+      </div>
 
-          <div class="stat">
-            <div class="stat-label">CURRENCY</div>
-            <div class="stat-value" style="font-size:1rem">
-              KES
-            </div>
-          </div>
+      <div class="skill">
+        <div class="icon">📈</div>
+        <h3>Trading Journal</h3>
+        <p>
+          Recording observations, ideas and lessons from simulated markets.
+        </p>
+      </div>
 
-          <div class="stat">
-            <div class="stat-label">BRAND</div>
-            <div class="stat-value" style="font-size:1rem">
-              MYHFMTRADER
-            </div>
-          </div>
+    </div>
 
-        </div>
+  </div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+
+  <div class="container">
+
+    <div class="section-label">Design Portfolio</div>
+
+    <h2>Selected creative work.</h2>
+
+    <p class="section-desc">
+      These are placeholder projects. Replace them with your real designs,
+      logos, posters, client work and artwork.
+    </p>
+
+    <div class="portfolio">
+
+      <article class="project">
+        <span class="number">01</span>
+        <h3>Brand Identity</h3>
+        <p>Logo design · Typography · Visual identity</p>
+      </article>
+
+      <article class="project">
+        <span class="number">02</span>
+        <h3>Social Campaign</h3>
+        <p>Digital graphics · Campaign design · Content</p>
+      </article>
+
+      <article class="project">
+        <span class="number">03</span>
+        <h3>Trading Visuals</h3>
+        <p>Charts · UI concepts · Financial branding</p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- JOURNAL -->
+<section id="journal">
+
+  <div class="container">
+
+    <div class="section-label">Trading Journal</div>
+
+    <h2>Learning in public.</h2>
+
+    <p class="section-desc">
+      A place to document your observations and lessons. The entries
+      below are examples for the portfolio.
+    </p>
+
+    <div class="journal">
+
+      <article class="entry">
+        <div class="entry-date">ENTRY 01</div>
+        <h3>Patience over prediction</h3>
+        <p>
+          Waiting for a structured setup can be more valuable than
+          forcing a trade because the market is moving.
+        </p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-date">ENTRY 02</div>
+        <h3>Respecting risk</h3>
+        <p>
+          A good process starts with understanding what can be lost
+          before thinking about what might be gained.
+        </p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-date">ENTRY 03</div>
+        <h3>Keep learning</h3>
+        <p>
+          Every chart, design and project is another opportunity to
+          improve the process.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <div class="section-label">Contact</div>
+
+      <h2>Let's create something.</h2>
+
+      <p>
+        Have a design project, collaboration idea or creative concept?
+        I'd love to hear about it.
+      </p>
+
+      <div class="contact-links">
+
+        <!-- Replace this email with your real email -->
+        <a
+          class="btn primary"
+          href="mailto:your@email.com"
+        >
+          ✉ Email Irish
+        </a>
+
+        <a
+          class="btn secondary"
+          href="#home"
+        >
+          ↑ Back to top
+        </a>
 
       </div>
 
-    </section>
+    </div>
 
-  </main>
+  </div>
 
-</div>
+</section>
 
 
-<div id="toast" class="toast"></div>
+<footer>
+
+  <div class="container">
+    © 2026 MYHFMTRADER · Irish All
+    <br>
+    Portfolio & simulated trading interface
+  </div>
+
+</footer>
 
 
 <script>
 
-/* =========================================================
-   ACCOUNT STATE
-========================================================= */
+/* ==========================================
+   SIMULATED MARKET ENGINE
+   ========================================== */
 
-let accountBalance = 100000;
-let demoPL = 0;
+let eur = 1.0842;
+let gbp = 1.2741;
+let gold = 2352.60;
 
-let positions = [];
-let history = [];
+const chart = document.getElementById("mainChart");
 
-let currentMarket = "EUR/USD";
+let points = [
+  [0,230],
+  [35,210],
+  [70,225],
+  [105,170],
+  [140,190],
+  [175,150],
+  [210,170],
+  [245,120],
+  [280,140],
+  [315,100],
+  [350,120],
+  [385,82],
+  [420,108],
+  [455,70],
+  [490,90],
+  [525,55],
+  [560,75],
+  [595,42],
+  [630,62],
+  [665,35],
+  [700,50]
+];
 
-const markets = {
-
-  "EUR/USD": {
-    price: 1.0842,
-    volatility: 0.0010
-  },
-
-  "GBP/USD": {
-    price: 1.2635,
-    volatility: 0.0014
-  },
-
-  "USD/JPY": {
-    price: 147.82,
-    volatility: 0.18
-  },
-
-  "XAU/USD": {
-    price: 2342.50,
-    volatility: 2.4
-  },
-
-  "BTC/USD": {
-    price: 67250,
-    volatility: 150
-  }
-
-};
-
-
-/* =========================================================
-   LOGIN
-========================================================= */
-
-function login(){
-
-  const username =
-    document.getElementById("loginUser").value.trim();
-
-  if(!username){
-    alert("Please enter a username.");
-    return;
-  }
-
-  document.getElementById("loginScreen")
-    .classList.add("hidden");
-
-  document.getElementById("app")
-    .classList.remove("hidden");
-
-  showToast("Welcome to MYHFMTRADER, " + username);
-
-  resizeCanvas();
-  startMarketSimulation();
-
+function randomMove(value, amount){
+  return value + ((Math.random() - .48) * amount);
 }
 
+function updateMarkets(){
 
-function logout(){
+  eur = randomMove(eur,.0012);
+  gbp = randomMove(gbp,.0015);
+  gold = randomMove(gold,2.5);
 
-  document.getElementById("app")
-    .classList.add("hidden");
+  document.getElementById("eur").textContent =
+    eur.toFixed(4);
 
-  document.getElementById("loginScreen")
-    .classList.remove("hidden");
+  document.getElementById("gbp").textContent =
+    gbp.toFixed(4);
 
-}
+  document.getElementById("gold").textContent =
+    gold.toFixed(2);
 
+  document.getElementById("heroPrice").textContent =
+    eur.toFixed(4);
 
-/* =========================================================
-   PAGE NAVIGATION
-========================================================= */
-
-function showPage(page, button){
-
-  document.querySelectorAll(".page")
-    .forEach(p => p.classList.remove("active"));
-
-  document.getElementById(page)
-    .classList.add("active");
-
-  document.querySelectorAll(".nav button")
-    .forEach(b => b.classList.remove("active"));
-
-  if(button){
-    button.classList.add("active");
-  }
-
-  const titles = {
-    dashboard:"Trading Dashboard",
-    deposit:"Demo Deposit",
-    withdraw:"Demo Withdrawal",
-    portfolio:"Design Portfolio",
-    profile:"My Profile"
-  };
-
-  document.getElementById("pageHeading")
-    .textContent = titles[page];
-
-  updateAccountDisplays();
-
-  if(page === "dashboard"){
-    setTimeout(resizeCanvas,100);
-  }
-
-}
-
-
-/* =========================================================
-   MONEY
-========================================================= */
-
-function money(value){
-
-  return "KES " + Number(value).toLocaleString(
-    "en-KE",
-    {
-      minimumFractionDigits:2,
-      maximumFractionDigits:2
-    }
-  );
-
-}
-
-
-function updateAccountDisplays(){
-
-  document.getElementById("balance")
-    .textContent = money(accountBalance);
-
-  document.getElementById("equity")
-    .textContent = money(accountBalance + demoPL);
-
-  document.getElementById("pl")
-    .textContent =
-      "KES " +
-      (demoPL >= 0 ? "+" : "") +
-      demoPL.toLocaleString("en-KE",{
-        minimumFractionDigits:2,
-        maximumFractionDigits:2
-      });
-
-  document.getElementById("depositBalance")
-    .textContent = money(accountBalance);
-
-  document.getElementById("withdrawBalance")
-    .textContent = money(accountBalance);
-
-}
-
-
-/* =========================================================
-   DEPOSIT
-========================================================= */
-
-function deposit(){
-
-  const input =
-    document.getElementById("depositInput");
-
-  const amount = Number(input.value);
-
-  if(!amount || amount <= 0){
-    showToast("Enter a valid KES amount.");
-    return;
-  }
-
-  accountBalance += amount;
-
-  input.value = "";
-
-  updateAccountDisplays();
-
-  showToast(
-    "Demo deposit added: " + money(amount)
-  );
-
-}
-
-
-/* =========================================================
-   WITHDRAW
-========================================================= */
-
-function withdraw(){
-
-  const input =
-    document.getElementById("withdrawInput");
-
-  const amount = Number(input.value);
-
-  if(!amount || amount <= 0){
-    showToast("Enter a valid KES amount.");
-    return;
-  }
-
-  if(amount > accountBalance){
-    showToast("Insufficient demo balance.");
-    return;
-  }
-
-  accountBalance -= amount;
-
-  input.value = "";
-
-  updateAccountDisplays();
-
-  document.getElementById("withdrawStatus")
-    .textContent =
-      "Demo withdrawal request created for " +
-      money(amount) +
-      ". No real funds were transferred.";
-
-  showToast(
-    "Demo withdrawal created: " + money(amount)
-  );
-
-}
-
-
-/* =========================================================
-   MARKET ENGINE
-========================================================= */
-
-let price = markets["EUR/USD"].price;
-
-let candles = [];
-
-let lastPrice = price;
-
-function createInitialCandles(){
-
-  candles = [];
-
-  let p = price;
-
-  for(let i=0;i<60;i++){
-
-    const open = p;
-
-    const move =
-      (Math.random()-.48) *
-      markets[currentMarket].volatility *
-      3;
-
-    const close = open + move;
-
-    const high =
-      Math.max(open,close) +
-      Math.random() *
-      markets[currentMarket].volatility;
-
-    const low =
-      Math.min(open,close) -
-      Math.random() *
-      markets[currentMarket].volatility;
-
-    candles.push({
-      open,
-      close,
-      high,
-      low
-    });
-
-    p = close;
-  }
-
-  lastPrice = p;
-  price = p;
-
-}
-
-
-function updateMarket(){
-
-  const market = markets[currentMarket];
-
-  const oldPrice = price;
-
-  const move =
-    (Math.random() - .485) *
-    market.volatility;
-
-  price += move;
-
-  const last =
-    candles[candles.length-1];
-
-  if(!last){
-    createInitialCandles();
-    return;
-  }
-
-  last.close = price;
-  last.high = Math.max(last.high,price);
-  last.low = Math.min(last.low,price);
+  document.getElementById("chartPrice").textContent =
+    eur.toFixed(4);
 
   /*
-    Occasionally start a new candle.
+    Move the simulated chart.
   */
 
-  if(Math.random() > .82){
+  const last = points[points.length - 1];
 
-    candles.push({
-      open:price,
-      close:price,
-      high:price,
-      low:price
+  let nextX = last[0] + 35;
+
+  if(nextX > 700){
+
+    points.shift();
+
+    points = points.map((p,i)=>{
+      return [
+        i * 35,
+        p[1]
+      ];
     });
 
-    if(candles.length > 65){
-      candles.shift();
-    }
-
+    nextX = 700;
   }
 
-  updateMarketUI(oldPrice);
-  calculatePositions();
+  let nextY =
+    last[1] +
+    ((Math.random() - .5) * 45);
 
-  drawChart();
+  nextY = Math.max(35,Math.min(265,nextY));
 
-}
+  points.push([nextX,nextY]);
 
+  chart.setAttribute(
+    "points",
+    points.map(p => p[0] + "," + p[1]).join(" ")
+  );
 
-function updateMarketUI(oldPrice){
+  /*
+    Small simulated percentage movement.
+  */
 
   const change =
-    ((price-oldPrice)/oldPrice)*100;
+    ((Math.random() * .7) + .7).toFixed(2);
 
-  document.getElementById("orderPrice")
-    .textContent = formatPrice(price);
-
-  document.getElementById("priceLabel")
-    .textContent = formatPrice(price);
-
-  document.getElementById("marketChange")
-    .textContent =
-      (change >= 0 ? "+" : "") +
-      change.toFixed(3) +
-      "%";
-
-  document.getElementById("marketChange")
-    .className =
-      change >= 0 ? "green" : "red";
-
+  document.getElementById("heroChange")
+    .textContent = "+" + change + "%";
 }
 
 
-function formatPrice(value){
+/*
+  Update the simulated market every second.
+*/
 
-  if(currentMarket === "BTC/USD"){
-    return value.toFixed(0);
-  }
-
-  if(currentMarket === "XAU/USD"){
-    return value.toFixed(2);
-  }
-
-  if(currentMarket === "USD/JPY"){
-    return value.toFixed(2);
-  }
-
-  return value.toFixed(4);
-
-}
+setInterval(updateMarkets,1000);
 
 
-/* =========================================================
-   MARKET CHANGE
-========================================================= */
+/* ==========================================
+   SCROLL REVEAL
+   ========================================== */
 
-function changeMarket(){
+const observer =
+  new IntersectionObserver(
+    entries => {
 
-  currentMarket =
-    document.getElementById("marketSelect").value;
+      entries.forEach(entry => {
 
-  price =
-    markets[currentMarket].price;
+        if(entry.isIntersecting){
 
-  createInitialCandles();
+          entry.target.style.opacity = "1";
+          entry.target.style.transform =
+            "translateY(0)";
 
-  document.getElementById("symbolTitle")
-    .textContent = currentMarket;
+        }
+
+      });
+
+    },
+    {threshold:.12}
+  );
+
+
+document.querySelectorAll(
+  ".card,.skill,.project,.entry,.profile-card,.contact-box"
+).forEach(element => {
+
+  element.style.opacity = "0";
+  element.style.transform = "translateY(20px)";
+  element.style.transition =
+    "opacity .7s ease, transform .7s ease";
+
+  observer.observe(element);
+
+});
+
+
+/* ==========================================
+   LIVE CLOCK STYLE STATUS
+   ========================================== */
+
+document.querySelector(".status")
+  .title =
+  "Simulated market — not live financial data";
+
+</script>
+
+</body>
+</html>
+
 
